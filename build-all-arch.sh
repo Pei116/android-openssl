@@ -10,6 +10,7 @@ mkdir prebuilt
 
 #archs=(armeabi arm64-v8a mips mips64 x86 x86_64)
 archs=(armeabi arm64-v8a x86 x86_64)
+openssl_version=1_0_2o
 
 for arch in ${archs[@]}; do
     xLIB="/lib"
@@ -61,7 +62,7 @@ for arch in ${archs[@]}; do
     . ./setenv-android-mod.sh
 
     echo "CROSS COMPILE ENV : $CROSS_COMPILE"
-    cd openssl-OpenSSL_1_0_2l
+    cd openssl-OpenSSL_$openssl_version
 
     xCFLAGS="-DSHARED_EXTENSION=.so -fPIC -DOPENSSL_PIC -DDSO_DLFCN -DHAVE_DLFCN_H -mandroid -I$ANDROID_NDK_ROOT/sysroot/usr/include -I$ANDROID_NDK_ROOT/sysroot/usr/include/$_ANDROID_EABI_INC -I$ANDROID_DEV/include -B$ANDROID_DEV/$xLIB -O3 -fomit-frame-pointer -Wall"
 
