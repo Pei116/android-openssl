@@ -10,7 +10,7 @@ mkdir prebuilt
 
 #archs=(armeabi arm64-v8a mips mips64 x86 x86_64)
 archs=(armeabi arm64-v8a x86 x86_64)
-openssl_version=1_0_2o
+openssl_version=1_0_2l
 
 for arch in ${archs[@]}; do
     xLIB="/lib"
